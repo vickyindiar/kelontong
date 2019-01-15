@@ -21,6 +21,7 @@ class CreateBarang extends Migration
             $table->string('satuan');
             $table->integer('stok');
             $table->string('kategori')->nullable();
+            $table->string('warna');
             $table->string('pemasok')->nullable();
             $table->string('keterangan')->nullable();
             $table->softDeletes();
