@@ -4,7 +4,6 @@ import $ from 'jquery';
 
 export default class Header extends Component {
   componentDidMount(){
-    console.log($);
     var el = document.querySelector('.dropdown-trigger');
     var instance = M.Dropdown.init(el);
   }

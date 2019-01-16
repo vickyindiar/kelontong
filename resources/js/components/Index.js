@@ -9,12 +9,10 @@ import Penjualan from './penjualan/Penjualan';
 import Pembelian from './pembelian/Pembelian';
 import Laporan from './laporan/Laporan';
 import Info from './info/Info';
-
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
 export default class Index extends Component {
-    componentDidMount(){
-    
-    }
     render() {
         return (
             <BrowserRouter >
@@ -37,6 +35,11 @@ export default class Index extends Component {
     }
 }
 
+const theme = createMuiTheme({ typography: { useNextVariants: true } });
+
 if (document.getElementById('app')) {
-    ReactDOM.render(<Index />, document.getElementById('app'));
+    ReactDOM.render(  
+    <ThemeProvider theme={theme}>
+          <Index />
+    </ThemeProvider>, document.getElementById('app'));
 }
